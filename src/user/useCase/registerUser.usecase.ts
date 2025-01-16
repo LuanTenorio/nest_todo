@@ -19,8 +19,8 @@ export class RegisterUserUseCase {
 
     private async generatePasswordHash(password: string){
         const salt = await genSalt()
-        const pwd = await hash(password, salt)
+        const pwdHash = await hash(password, salt)
 
-        return password 
+        return pwdHash 
     }
 }
