@@ -51,8 +51,8 @@ describe('PatchUserUseCase', () => {
     expect(patchUserUseCase).toBeDefined();
   });
 
-  describe("register", () => {
-    it("should register a new user", async () => {
+  describe("patch", () => {
+    it("should patch a new user", async () => {
       const userDto: CreateUserDto = {
         name: "Luan Tenório",
         email: "lluantenorio7@gmail.com",
