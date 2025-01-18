@@ -1,6 +1,6 @@
 import { Inject } from "@nestjs/common";
 import { PatchUserDto } from "../dto/patchUser.dto";
-import { UserPrismaRepository } from "../repository/user-prisma.repository";
+import { UserPrismaRepository } from "../repository/userPrisma.repository";
 
 export class PatchUserUseCase {
 
