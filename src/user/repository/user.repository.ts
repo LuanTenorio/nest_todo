@@ -5,4 +5,5 @@ import { PatchUserDto } from "../dto/patchUser.dto";
 export interface IUserRepository {
     create(createUserDto: CreateUserDto): Promise<IdDto>
     patch(patchUserDto: PatchUserDto): Promise<IdDto>
+    delete(id: number): void
 }

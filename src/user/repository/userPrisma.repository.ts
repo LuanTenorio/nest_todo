@@ -30,4 +30,9 @@ export class UserPrismaRepository implements IUserRepository {
       })
     }
 
+    async delete(id: number){
+      await this.prismaService.user.delete({
+        where: {id}
+      })
+    }
 }
