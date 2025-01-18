@@ -1,7 +1,8 @@
-import { Body, Controller, Inject, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Inject, Param, ParseIntPipe, Patch, Post, ValidationPipe } from '@nestjs/common';
 import { CreateUserDto } from './dto/createUser.dto';
 import { RegisterUserUseCase } from './useCase/registerUser.usecase';
 import { PatchUserUseCase } from './useCase/patchUser.usecase';
+import { PatchUserDto } from './dto/patchUser.dto';
 
 @Controller('users')
 export class UserController {
@@ -17,7 +18,7 @@ export class UserController {
     }
 
     @Patch(":id")
-    async patch(@Param("id", ParseIntPipe) id, @Body() patchDto: CreateUserDto) {
+    async patch(@Param("id", ParseIntPipe) id, @Body() patchDto: PatchUserDto) {
         return this.patchUserUseCase.execute(id, patchDto)
     }
 }
